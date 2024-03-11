@@ -1,0 +1,38 @@
+11-03-24_22:14:00
+=========================================
+============ AUTOGRADING ================
+=========================================
+Examining contents of 1917_4347.zip
+One jupyter notebook found
+-----------------------------------------
+Unzipping 1917_4347.zip to /home/autograder/unzipped
+Archive:  /home/autograder/temp/1917_4347.zip
+  inflating: /home/autograder/unzipped/1917_4347/preamble.py  
+  inflating: /home/autograder/unzipped/1917_4347/submission_Linear_regression_Code_challenge (1).ipynb  
+  inflating: /home/autograder/unzipped/1917_4347/Linear_regression_Code_challenge_test_suite.py  
+caution: excluded filename not matched:  __MACOSX/*
+Unzipped successfully
+-----------------------------------------
+Processing notebook
+Notebook processed successfully
+-----------------------------------------
+Checking submission for syntax errors
+Check complete
+-----------------------------------------
+Grading student code
+Student code graded successfully
+PASSED     get_correlation
+PASSED     fit_linear_regression_model
+PASSED     get_slope_intercept
+PASSED     calculate_evaluation_metrics
+PASSED     data_train_test_split
+PASSED     train_split_linear_regression_model
+PASSED     calculate_residuals_statistics
+-----------------------------------------
+Saving result (100.0) to 1917_4347.csv
+=========================================
+AUTOGRADING COMPLETED WITH EXIT STATUS: 0
+=========================================
+
+Submission Name : 1917_4347.zip
+Grade : 100.0
