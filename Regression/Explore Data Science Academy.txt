@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://alx-learn.explore.ai/student/lesson/content-view/9/533/4373/2 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Explore Data Science Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://alx-learn.explore.ai/images/EDSA_favicon.gif" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="./Explore Data Science Academy_files/bootstrap.min.css">
+<link rel="stylesheet" href="./Explore Data Science Academy_files/bootstrap-datepicker.min.css">
+<link rel="stylesheet" type="text/css" href="./Explore Data Science Academy_files/style.css">
+<link rel="stylesheet" type="text/css" href="./Explore Data Science Academy_files/lesson-style.css">
+<link rel="stylesheet" type="text/css" href="./Explore Data Science Academy_files/custom-styles.css">
+<link rel="stylesheet" type="text/css" href="./Explore Data Science Academy_files/popup.css">
+
+<link rel="stylesheet" href="./Explore Data Science Academy_files/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="./Explore Data Science Academy_files/nice-select.css">
+<link rel="stylesheet" type="text/css" href="./Explore Data Science Academy_files/uploadfile.css">
+<script src="./Explore Data Science Academy_files/jquery-v2.2.3.min.js"></script>
+<script src="./Explore Data Science Academy_files/home.js"></script>
+<script src="./Explore Data Science Academy_files/custom.js"></script>
+<script src="./Explore Data Science Academy_files/common.js"></script>
+<script type="text/javascript" src="./Explore Data Science Academy_files/jquery-ui.js"></script>
+<script type="text/javascript" src="./Explore Data Science Academy_files/moment.min.js"></script>
+<script type="text/javascript" src="./Explore Data Science Academy_files/bootstrap-datetimepicker.min.js"></script>
+<script src="./Explore Data Science Academy_files/jquery.nice-select.min.js"></script>
+<script src="./Explore Data Science Academy_files/jquery.uploadfile.min.js"></script>
+<script type="text/javascript" src="./Explore Data Science Academy_files/file_upload_monitor.js"></script>
+<script src="./Explore Data Science Academy_files/csrf.js"></script>
+<script>
+  /* Variables to be used in various Javascript files */
+    var base_url = 'https://alx-learn.explore.ai/';
+
+    //Content Groups
+    var CONTENT_GROUP_PROBLEM_STATEMENT = 1;
+    var CONTENT_GROUP_PRE_PROCESSING = 2;
+    var CONTENT_GROUP_TRAIN = 3;
+    var CONTENT_GROUP_TEST = 4;
+    var CONTENT_GROUP_PREDICT = 5;
+
+    //Content Types
+    var CONTENT_TYPE_VIDEO = 1;
+    var CONTENT_TYPE_PDF = 2;
+    var CONTENT_TYPE_POWERPOINT = 3;
+    var CONTENT_TYPE_GITHUB_GIST = 4;
+    var CONTENT_TYPE_JUPYTER_NOTEBOOK = 5;
+    var CONTENT_TYPE_URL = 6;
+    var CONTENT_TYPE_YOUTUBE_VIDEO_URL = 7;
+    var CONTENT_TYPE_GOOGLE_DOCS = 8;
+    var CONTENT_TYPE_GOOGLE_SLIDES = 9;
+    var CONTENT_TYPE_UDEMY_URL = 10;
+    var CONTENT_TYPE_CSV = 11;
+    var CONTENT_TYPE_HTML = 12;
+    var CONTENT_TYPE_JUPYTER = 13;
+    var CONTENT_TYPE_MCQ = 14;
+    var CONTENT_TYPE_ZIP = 17;
+    var CONTENT_TYPE_JUPYTER_GITHUB = 21;
+    var CONTENT_TYPE_PYTHON = 19;
+    var CONTENT_TYPE_PYTHON_GITHUB = 22;
+    var CONTENT_TYPE_CSV_SCRIPT = 20;
+    var CONTENT_TYPE_CSV_GITHUB = 23;
+    var CONTENT_TYPE_INTERACTIVE_CODE_BLOCK = 28;
+    var CONTENT_TYPE_MARKDOWN_ON_GITHUB = 29;
+    var CONTENT_TYPE_CODING_TUTORIAL = 30;
+
+    //Predict section types
+    var PREDICT_SECTION_TYPE_AUTOGRADED = 5;
+    var PREDICT_SECTION_TYPE_FILE_UPLOAD = 6;
+
+    var MEETING_LINK_ACTIVE_BEFORE_SECONDS = 600</script>
+<script>
+  $(document).ready(function() { 
+    $('.role-selector select').niceSelect(); 
+
+    $('.datepicker').datetimepicker({
+      format: 'YYYY-MM-DD'
+    }).on("dp.change", function() {
+        lesson_set_current_date();
+    });
+});
+</script>
+</head>
+<body>
+<div class="main-outer" id="dasboard-page">
+<div class="left-slidebar">
+<div class="menu_bar_small">
+<div class="menu-bar-open">
+<div class="logo">
+<a href="javascript:void(0);">
+<img src="./Explore Data Science Academy_files/menu.svg" alt="img" class="toggle-icon">
+<img src="./Explore Data Science Academy_files/logo.png" alt="" class="mobile-logo">
+</a>
+</div>
+<div class="nav-wrapper">
+<div class="user-profile">
+<div class="user-image">
+<a href="https://alx-learn.explore.ai/student/profile" title="Chrispus Ouma" data-cy="user-profile-image">
+<img src="./Explore Data Science Academy_files/1917-cbSz.jpeg" alt="">
+</a>
+</div>
+</div>
+<div class="menus">
+<ul class="menu_bar_middle">
+<li><a class="" href="https://alx-learn.explore.ai/student/dashboard" title="Dashboard">
+<img src="./Explore Data Science Academy_files/dashboard.svg"></a></li>
+<li><a class="" href="https://alx-learn.explore.ai/student/curriculum" title="Curriculum">
+<img src="./Explore Data Science Academy_files/curriculum.svg"></a></li>
+<li><a class="" href="https://alx-learn.explore.ai/student/calendar" title="Calendar">
+<img src="./Explore Data Science Academy_files/calendar.svg"></a></li>
+<li><a class="" href="https://alx-learn.explore.ai/student/manifesto" title="Manifesto">
+<img src="./Explore Data Science Academy_files/manifesto.svg"></a></li>
+
+<li><a href="javascript:void(0);" onclick="javascript:logout();">
+<img src="./Explore Data Science Academy_files/signout.svg"></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="menu_bar_big">
+<div class="logo">
+<a href="javascript:void(0);">
+<img src="./Explore Data Science Academy_files/menu.svg" alt="img" class="toggle-icon2">
+<img src="./Explore Data Science Academy_files/close-icon.png" alt="" class="close-btn2">
+<img src="./Explore Data Science Academy_files/logo.png" alt="">
+</a>
+</div>
+<div class="nav-wrapper">
+<div class="home-nav">
+<a class="" href="https://alx-learn.explore.ai/student/dashboard"><svg xmlns="http://www.w3.org/2000/svg" width="33" height="30" viewBox="0 0 29.392 27.216"> <path id="Path_523" data-name="Path 523" d="M51.2,41.5l-.77.736L36.5,56.163l1.54,1.54,1.373-1.373V68.716h9.641V58h4.285V68.716H62.98V56.33L64.352,57.7l1.54-1.54L51.966,42.236Zm0,3.046,9.641,9.641V66.574H55.481V55.861h-8.57V66.574H41.555V54.188Z" transform="translate(-36.5 -41.5)" fill="#fff"></path> </svg></a>
+<a href="https://alx-learn.explore.ai/student/dashboard" style="float:right;color:white">Help &amp; FAQ</a> </div>
+<div class="user-profile">
+<div class="user-image">
+<a href="https://alx-learn.explore.ai/student/profile" title="Chrispus Ouma">
+<img src="./Explore Data Science Academy_files/1917-cbSz.jpeg" alt="">
+</a>
+</div>
+<div class="user-info">
+<h5>Chrispus Ouma</h5>
+</div>
+</div>
+<div class="menus">
+<ul class="menu_bar_middle">
+<li><a class="" href="https://alx-learn.explore.ai/student/dashboard" title="Dashboard">
+<img src="./Explore Data Science Academy_files/dashboard.svg"> <span>Dashboard</span></a></li>
+<li><a class="" href="https://alx-learn.explore.ai/student/curriculum" title="Curriculum">
+<img src="./Explore Data Science Academy_files/curriculum.svg"> <span>Curriculum</span> </a></li>
+<li><a class="" href="https://alx-learn.explore.ai/student/calendar" title="Calendar">
+<img src="./Explore Data Science Academy_files/calendar.svg"> <span>Calendar</span></a></li>
+<li><a class="" href="https://alx-learn.explore.ai/student/manifesto" title="Manifesto">
+<img src="./Explore Data Science Academy_files/manifesto.svg"> <span>Manifesto</span></a></li>
+
+<li><a href="javascript:void(0);" onclick="javascript:logout();">
+<img src="./Explore Data Science Academy_files/signout.svg"> <span>Sign out</span></a></li>
+</ul>
+</div>
+<div class="role-selector">
+<h5>Single Login</h5>
+<select name="single_login" id="single_login" onchange="javascript:set_single_login();" style="display: none;">
+</select><div class="nice-select" tabindex="0"><span class="current"></span><ul class="list"></ul></div>
+</div>
+</div>
+</div>
+</div>
+<div class="main-containt">
+<script src="./Explore Data Science Academy_files/overview.js"></script>
+<div class="course-sec content-sec" id="lesson_content_wrapper">
+<div class="course-menus-btn">
+<a href="javascript:void(0)">Select Sprint</a>
+</div>
+<div class="course-menus step5" id="step5">
+<div class="sprint-bar">
+<a href="https://alx-learn.explore.ai/student/lesson/content-view/9/533/4373/2#" class="close-btn3">
+<img src="./Explore Data Science Academy_files/close-icon2.png" alt="">
+</a>
+Select Sprint &amp; Lesson
+</div>
+<div class="select-menubar">
+<p>Sprint</p>
+<h2> Regression</h2>
+</div>
+<ul class="course-menu course-menu-new">
+<li class="dropdown  "><a href="javascript:void(0);"><span class="sprint-name">1. </span>Module overview: Regression</a>
+<ul class="main-submenu">
+<li class="dropdown">
+<ul class="submenu-child">
+<li id="nav_4351" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">1.1</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,527,4351,1,0,0,0);" class="done">Module overview: Regression</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown  "><a href="javascript:void(0);"><span class="sprint-name">2. </span>An introduction to machine learning</a>
+<ul class="main-submenu">
+<li class="dropdown">
+<ul class="submenu-child">
+<li id="nav_4346" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">2.1</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,525,4346,1,0,0,0);" class="done">Lesson overview: An introduction to machine learning [PDF]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4343" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">2.2</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,525,4343,3,0,0,0);" class="done">An introduction to machine learning [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4344" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">2.3</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,525,4344,3,0,0,0);" class="done">An introduction to predictive modelling [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4345" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">2.4</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,525,4345,3,0,0,0);" class="done">How to train and assess ML models [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown  "><a href="javascript:void(0);"><span class="sprint-name">3. </span>Linear models</a>
+<ul class="main-submenu">
+<li class="dropdown">
+<ul class="submenu-child">
+<li id="nav_4342" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">3.1</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,524,4342,1,0,0,0);" class="done">Lesson overview: Linear models [PDF]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_3602" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">3.2</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,524,3602,3,0,0,0);" class="done">The line of best fit [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_3718" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">3.3</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,524,3718,3,0,0,0);" class="done">The line of best fit equation [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4337" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">3.4</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,524,4337,3,0,0,0);" class="done">Introduction to Simple Linear Regression [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4338" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">3.5</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,524,4338,3,0,0,0);" class="done">Least Squares method [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4339" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">3.6</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,524,4339,3,0,0,0);" class="done">Least Squares Regression [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4340" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">3.7</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,524,4340,3,0,0,0);" class="done">Simple Linear Regression using Least Squares [Exercise]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4341" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">3.8</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,524,4341,3,0,0,0);" class="done">Additional resources: Linear models [Markdown]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown  "><a href="javascript:void(0);"><span class="sprint-name">4. </span>Model performance</a>
+<ul class="main-submenu">
+<li class="dropdown">
+<ul class="submenu-child">
+<li id="nav_4308" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">4.1</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,522,4308,1,0,0,0);" class="done">Lesson overview: Model performance [PDF]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_3686" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">4.2</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,522,3686,3,0,0,0);" class="done">An Introduction to model accuracy and metrics [Slides]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_3688" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">4.3</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,522,3688,3,0,0,0);" class="done">Understanding common challenges to model accuracy [Slides]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_3693" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">4.4</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,522,3693,3,0,0,0);" class="done">Reference card: Accuracy [PDF]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4309" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">4.5</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,522,4309,3,0,0,0);" class="done">The train-test split [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4311" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">4.6</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,522,4311,3,0,0,0);" class="done">Testing model performance [Exercise]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4310" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">4.7</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,522,4310,2,0,0,0);" class="done">Additional Resources: Model performance [Markdown]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4347" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">4.8</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,522,4347,4,0,0,0);" class="done-indicator">Linear regression [Code Challenge]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4347" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">4.9</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,522,4347,4,0,0,0);" class="done-indicator">Linear regression [Code Challenge]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown  "><a href="javascript:void(0);"><span class="sprint-name">5. </span>Multiple linear regression</a>
+<ul class="main-submenu">
+<li class="dropdown">
+<ul class="submenu-child">
+<li id="nav_4300" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">5.1</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,516,4300,1,0,0,0);" class="done">Lesson overview: Multiple linear regression</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4301" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">5.2</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,516,4301,3,0,0,0);" class="done">Fitting a multiple linear regression model in sklearn [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4302" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">5.3</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,516,4302,3,0,0,0);" class="done">Multiple linear regression: Advanced regression analysis [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4305" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">5.4</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,516,4305,3,0,0,0);" class="done">Multiple linear regression: Fitting a model in sklearn [Example]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4306" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">5.5</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,516,4306,3,0,0,0);" class="done">Multiple linear regression: Advanced regression analysis 1 [Example]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4307" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">5.6</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,516,4307,3,0,0,0);" class="done">Multiple linear regression: Advanced regression analysis 2 [Example]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4315" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">5.7</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,516,4315,3,0,0,0);" class="done">Multiple linear regression [Exercise]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4316" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">5.8</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,516,4316,3,0,0,0);" class="done">Additional resources: Multiple linear regression [Markdown]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown  "><a href="javascript:void(0);"><span class="sprint-name">6. </span>Variable selection and model persistence</a>
+<ul class="main-submenu">
+<li class="dropdown">
+<ul class="submenu-child">
+<li id="nav_4368" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">6.1</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,532,4368,1,0,0,0);" class="done">Lesson overview: Variable selection and model persistence [PDF]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4362" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">6.2</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,532,4362,3,0,0,0);" class="done">Variable selection [Walk-through]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4363" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">6.3</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,532,4363,3,0,0,0);" class="done">Variables and variable selection [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4364" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">6.4</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,532,4364,3,0,0,0);" class="done">Variables and variable selection [Exercise]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4360" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">6.5</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,532,4360,2,0,0,0);" class="done">Additional resources : Variables and variable selection [Markdown]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4365" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">6.6</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,532,4365,3,0,0,0);" class="done">Saving and restoring models in Python [Walk-through]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4366" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">6.7</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,532,4366,3,0,0,0);" class="done">Saving and restoring models in Python [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4367" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">6.8</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,532,4367,3,0,0,0);" class="done">Saving and restoring models in Python [Exercise]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown current  "><a href="javascript:void(0);"><span class="sprint-name">7. </span>Regularisation</a>
+<ul class="main-submenu">
+<li class="dropdown">
+<ul class="submenu-child">
+<li id="nav_4355" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">7.1</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,533,4355,1,0,0,0);" class="done">Lesson overview: Regularisation [PDF]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4369" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">7.2</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,533,4369,3,0,0,0);" class="done">Regularisation - Data scaling [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4357" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">7.3</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,533,4357,3,0,0,0);" class="done">Regularisation - Ridge [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4370" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">7.4</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,533,4370,3,0,0,0);" class="done">Regularisation - Ridge [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4358" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">7.5</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,533,4358,3,0,0,0);" class="done">Regularisation - Lasso [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4371" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">7.6</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,533,4371,3,0,0,0);" class="done">Regularisation - LASSO [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4372" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">7.7</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,533,4372,3,0,0,0);" class="done">Regularisation [Exercise]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4373" class=" active-content ">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">7.8</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,533,4373,2,0,0,0);" class="">Additional Resources: Regularisation [Markdown]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4361" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">7.9</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,533,4361,4,0,0,0);" class="pending-indicator">Multiple linear regression, variable selection and regularisation [MCQ]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown  "><a href="javascript:void(0);"><span class="sprint-name">8. </span>Decision trees</a>
+<ul class="main-submenu">
+<li class="dropdown">
+<ul class="submenu-child">
+<li id="nav_4384" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">8.1</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,536,4384,1,0,0,0);" class="">Lesson overview: Decision trees [PDF]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4385" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">8.2</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,536,4385,3,0,0,0);" class="">An introduction to decision trees [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4386" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">8.3</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,536,4386,3,0,0,0);" class="">Training a decision tree [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4387" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">8.4</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,536,4387,3,0,0,0);" class="">Pruning a decision tree [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4388" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">8.5</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,536,4388,3,0,0,0);" class="">Decision trees with sklearn [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4392" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">8.6</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,536,4392,3,0,0,0);" class="">Decision trees [Exercise]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown  "><a href="javascript:void(0);"><span class="sprint-name">9. </span>Ensemble methods and bootstrapping</a>
+<ul class="main-submenu">
+<li class="dropdown">
+<ul class="submenu-child">
+<li id="nav_4376" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">9.1</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,535,4376,1,0,0,0);" class="">Lesson overview: Ensemble methods and bootstrapping [PDF]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4377" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">9.2</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,535,4377,3,0,0,0);" class="">Parametric methods, ensembling and boostrapping [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4378" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">9.3</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,535,4378,3,0,0,0);" class="">Ensemble methods [Video]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4379" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">9.4</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,535,4379,3,0,0,0);" class="">Understanding the basics for ensemble methods [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4381" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">9.5</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,535,4381,3,0,0,0);" class="">Heterogeneous ensemble methods [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4382" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">9.6</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,535,4382,3,0,0,0);" class="">Homogeneous ensemble methods [Examples]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4380" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">9.7</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,535,4380,3,0,0,0);" class="">Ensemble Methods [Exercise]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="nav_4383" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">9.8</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,535,4383,2,0,0,0);" class="">Additional resources: Parametric models, ensembling and bootstrapping [Markdown]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown  "><a href="javascript:void(0);"><span class="sprint-name">10. </span>Decision tree code challenge</a>
+<ul class="main-submenu">
+<li class="dropdown">
+<ul class="submenu-child">
+<li id="nav_4374" class="">
+<div class="row">
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-2 lesson-name">10.1</div>
+<div class="col-sm-10" style="margin-left: -45px;">
+<a href="javascript:void(0);" onclick="javascript:set_content_view(9,538,4374,4,0,0,0);" class="pending-indicator">Decision tree [Code challenge]</a>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="course-dis content-page">
+<div id="content_area">
+<div class="content-area">
+<h2>Additional Resources: Regularisation [Markdown]</h2>
+<p>This markdown provides links that contain additional information from external resources. </p>
+<br>
+<iframe src="./Explore Data Science Academy_files/2.html" width="100%" height="704" style="border: none;"></iframe>
+<h6 style="margin-top: 10px;">Release On: 11 Mar, 2024</h6>
+<div class="rate-time-sec">
+<div class="rate-time-left">
+<span id="status_completed">
+<a href="javascript:void(0);" onclick="openSetResourceComplete();" class="btn blue-btn mb-20">Set as Complete</a>
+<h6>Status: <strong id="content_status" class="status-label status-incomplete">incomplete</strong></h6>
+</span>
+</div>
+<div class="rate-time-right">
+<div class="rate-item">
+<h6 id="p_rating_text">Rate this pre-processing</h6>
+<div class="icons-sec" id="pre_processing_rating_wrapper">
+<a onclick="javascript:set_pre_processing_rating(1,4373)"> <img src="./Explore Data Science Academy_files/like_icon.png" alt=""> </a>
+<a onclick="javascript:set_pre_processing_rating(0,4373)"> <img src="./Explore Data Science Academy_files/dis-like-icon.png" alt=""> </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="setResourceCompleteModal" style="display:none">
+<h2>Additional Resources: Regularisation [Markdown]</h2>
+<p>Are you sure you want to set this Pre-processing as complete?</p>
+<p><br></p>
+<a type="button" class="btn blue-btn" onclick="set_resource_completed(9,533,4373);"> Yes </a>
+<a type="button" class="btn gray-btn" style="max-width: 202px;float:left;" onclick="$(&#39;.lightbox-close&#39;).click();"> Close </a>
+</div>
+
+<script src="./Explore Data Science Academy_files/lesson_preprocessing.js"></script> </div>
+<div class="next-prev-btn-group" id="content_buttons_container">
+<a href="https://alx-learn.explore.ai/student/lesson/content-view/9/533/4372/3" class="btn blue-btn previous-btn">⇐ Previous</a>
+<a href="https://alx-learn.explore.ai/student/lesson/content-test/9/533/4361" class="btn blue-btn next-btn" onclick="return checkFileUpload();">Next ⇒</a>
+</div>
+</div>
+</div>
+<script language="javascript">
+var CONTENT_GROUP_PROBLEM_STATEMENT = 1;
+var CONTENT_GROUP_PRE_PROCESSING = 2;
+var CONTENT_GROUP_TRAIN = 3;
+var CONTENT_GROUP_TEST = 4;
+var CONTENT_GROUP_PREDICT = 5;
+</script>
+</div>
+</div>
+
+<script src="./Explore Data Science Academy_files/popup.js"></script>
+<div class="lightbox" id="lightbox" style="display: none;">
+<div class="lightbox-container">
+<div class="lightbox-close"></div>
+<div class="lightbox-body" id="lightbox-body">
+<h2>Additional Resources: Regularisation [Markdown]</h2>
+<p>Are you sure you want to set this Pre-processing as complete?</p>
+<p><br></p>
+<a type="button" class="btn blue-btn" onclick="set_resource_completed(9,533,4373);"> Yes </a>
+<a type="button" class="btn gray-btn" style="max-width: 202px;float:left;" onclick="$(&#39;.lightbox-close&#39;).click();"> Close </a>
+</div>
+</div>
+</div>
+
+
+<div class="lightbox" id="message_popup">
+<div class="lightbox-container" style="min-height:250px;">
+<div class="lightbox-close"></div>
+<div data-cy="feedback-train-popup-content" class="lightbox-body" id="message_popup_body">
+</div>
+<div class="icons-sec">
+<span class="train_feedback_btn_wrapper">
+<a data-cy="feedback-train-popup-ok-button" href="javascript:void(0);" id="message_popup_ok" onclick="javascript:$(&#39;#message_popup&#39;).fadeOut();" class="btn blue-btn mb-20">OK</a>
+</span>
+</div>
+</div>
+</div>
+
+<div id="div_ajax_loader" style="display:none;"></div>
+
+</body></html>
